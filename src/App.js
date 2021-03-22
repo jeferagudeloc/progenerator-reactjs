@@ -1,16 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+
+import React from "react";
+import {
+  BrowserRouter
+} from "react-router-dom";
+
+import { Layout } from './components/layout/Layout';
+import { AuthProvider } from './context/AuthProvider';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          PROGENERATOR
-        </p>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <AuthProvider>
+          <Layout />
+        </AuthProvider>
+      </BrowserRouter>
+    </>
   );
 }
 
